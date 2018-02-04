@@ -1,3 +1,5 @@
+var years, days, hours, mins, secs;
+
 $(document).on('click', 'a[href^="#"]', function (event) {
     event.preventDefault();
 
@@ -7,8 +9,62 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 });
 
 function t() {
-window.sr = ScrollReveal({ reset: true });
-sr.reveal('.scrollReveal', { duration: 600});
+    window.sr = ScrollReveal({ reset: true });
+    sr.reveal('.scrollReveal', { duration: 600});
 }
 
-window.onload = t;
+function formatTime(t) { // t is either minutes, hours, or seconds
+    if (t < 10) t = "0" + t;
+    return t;
+}
+
+function displayTime() {
+    document.getElementById("age").innerHTML = years + " Years, " + days +"d, " + (hours) + "h, " + (mins) + "m, " + formatTime(secs) + "s Old";
+}
+
+function updateTime() {
+    secs++;
+    if (secs == 60) {
+        secs = "0";
+        mins++;
+        mins = formatTime(mins);
+        if (mins == 60) {
+            mins = "00";
+            hours++;
+            hours = formatTime(hours);
+            if (hours == 24) {
+                hours = "00";
+                days++;
+                if (days == 365) {
+                    days = 0;
+                    years++;
+                }
+            }
+        }
+    }
+}
+
+function loop() {
+    updateTime();
+    displayTime();
+    console.log("hi");
+    setTimeout(loop, 1000);
+}
+
+window.onload = function() {
+    t();
+    var date = new Date();
+    var myAge = date.getTime() - 1018356800000; // changed a lil bit :c
+    myAge /= 1000;
+    secs = parseInt(myAge % 60);
+    myAge /= 60;
+    mins = formatTime(parseInt(myAge % 60));
+    myAge /= 60;
+    hours = formatTime(parseInt(myAge % 24));
+    myAge /= 24;
+    days = parseInt(myAge % 365);
+    myAge /= 365;
+    years = parseInt(myAge);
+    // myAge now has the value of years!
+    loop();
+}

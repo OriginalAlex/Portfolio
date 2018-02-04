@@ -13,11 +13,29 @@
     src: url(resources/ASCOTA%20Regular.woff) format("woff");
 }
 
+body {
+    padding-bottom: 3vh;
+}
+
+@media only screen and (max-width: 900px) {
+    #age {
+        display: none;
+    }
+}
+
 #navbar {
     margin-bottom: 0;
     height: 5vh;
     background-color: inherit !important;
     border: 0;
+    font-family: "Roboto";
+    font-size: 16px;
+}
+
+.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #padding {
@@ -219,4 +237,31 @@
 
 .timeline-body > p + p {
   margin-top: 5px;
+}
+
+#projects {
+    margin-top: 5vh;
+}
+
+.carousel-inner .carousel-item {
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 2s ease;
+}
+
+.carousel-img {
+    height: 50vh;
+    background-size: cover;
+}
+
+#ethereal {
+    background-image: url(resources/ether.png);
+}
+
+#wikipedia {
+    background-image: url(resources/wikipedia.png);
+}
+
+#stock {
+    background-image: url(resources/stocks.jpg);
 }

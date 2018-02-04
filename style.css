@@ -1,6 +1,16 @@
 @font-face {
     font-family: CollegeBlock;
-    src: url("resources/College%20Block%202.0%20demo.woff") format("woff");
+    src: url(resources/College%20Block%202.0%20demo.woff) format("woff");
+}
+
+@font-face {
+    font-family: Papaya;
+    src: url(resources/Papaya%20Sunrise%20D.woff) format("woff");
+}
+
+@font-face {
+    font-family: Ascota;
+    src: url(resources/ASCOTA%20Regular.woff) format("woff");
 }
 
 #navbar {
@@ -34,8 +44,9 @@
 }
 
 #frontContainer {
-    background-image: url(resources/space.jpg);
+    background: url(resources/space.jpg) 0 0 no-repeat;
     background-size: cover;
+
 }
 
 .vertical-center {
@@ -47,12 +58,12 @@
 }
 
 #education {
-    background-color: #282828;
-    color: floralwhite;
+    background-color: white;
+    color: black;
 }
 
 #timeline {
-    font-family: "Roboto";
+    font-family: "Papaya";
     font-size: 40px;
 }
 
@@ -193,6 +204,12 @@
 .timeline-title {
   margin-top: 0;
   color: inherit;
+    font-family: "Papaya";
+}
+
+.timeline-body {
+    font-family: "Ascota";
+    font-size: 16px;
 }
 
 .timeline-body > p,

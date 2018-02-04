@@ -54,7 +54,7 @@ function loop() {
 window.onload = function() {
     t();
     var date = new Date();
-    var myAge = date.getTime() - 1018356800000; // changed a lil bit :c
+    var myAge = date.getTime() - 1018560300000; // changed a lil bit :c
     myAge /= 1000;
     secs = parseInt(myAge % 60);
     myAge /= 60;

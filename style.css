@@ -292,7 +292,6 @@ body {
 }
 
 .projectContainer {
-    height: 20vh;
     text-align: center;
     border: 1px solid lightgray;
     padding: 2vh 1vw 2vh 1vw;
@@ -307,6 +306,20 @@ body {
     -moz-transform: scale(1);
     transition: all 200ms ease-in;
     transform: scale(1);  
+}
+
+.projectContainer p {
+    font-size: 17px;
+    font-family: "Ascota";
+}
+
+.projectContainer h3 {
+    font-size: 28px;
+}
+
+.projectContainer a {
+    text-decoration: underline;
+    color: inherit;
 }
 
 .projectContainer:hover {

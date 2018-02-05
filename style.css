@@ -329,3 +329,11 @@ body {
 .imgContainer {
     height: 100%;
 }
+
+.row {
+    margin-top: -4vh;
+}
+
+.row > div {
+    margin-top: 4vh;
+}

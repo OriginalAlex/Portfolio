@@ -8,9 +8,10 @@ $(document).on('click', 'a[href^="#"]', function (event) {
     }, 500);
 });
 
-function t() {
+function scrollReveal() {
     window.sr = ScrollReveal({ reset: true });
     sr.reveal('.scrollReveal', { duration: 600});
+    sr.reveal('.projectContainer', { duration: 600});
 }
 
 function formatTime(t) { // t is either minutes, hours, or seconds
@@ -52,7 +53,7 @@ function loop() {
 }
 
 window.onload = function() {
-    t();
+    scrollReveal();
     var date = new Date();
     var myAge = date.getTime() - 1018560300000; // changed a lil bit :c
     myAge /= 1000;

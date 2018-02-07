@@ -1,4 +1,4 @@
-var years, days, hours, mins, secs;
+var years, days, hours, mins, secs, age;
 
 $(document).on('click', 'a[href^="#"]', function (event) {
     event.preventDefault();
@@ -20,7 +20,7 @@ function formatTime(t) { // t is either minutes, hours, or seconds
 }
 
 function displayTime() {
-    document.getElementById("age").innerHTML = years + " Years, " + days +"d, " + (hours) + "h, " + (mins) + "m, " + formatTime(secs) + "s Old";
+    age.innerHTML = years + "y : " + days +"d : " + (hours) + "h : " + (mins) + "m : " + formatTime(secs) + "s";
 }
 
 function updateTime() {
@@ -54,6 +54,7 @@ function loop() {
 
 window.onload = function() {
     scrollReveal();
+    age = document.getElementById("age");
     var date = new Date();
     var myAge = date.getTime() - 1018560300000; // changed a lil bit :c
     myAge /= 1000;

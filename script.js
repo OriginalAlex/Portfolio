@@ -9,7 +9,7 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 });
 
 function scrollReveal() {
-    window.sr = ScrollReveal({ reset: true });
+    window.sr = ScrollReveal({ reset: false });
     sr.reveal('.scrollReveal', { duration: 600});
     sr.reveal('.projectContainer', { duration: 600});
 }
